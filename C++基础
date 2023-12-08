@@ -3,74 +3,74 @@
 	2.类是创建对象的模板，一个类可以创建多个对象，每个对象都是类类型的一个变量；创建对象的过程也叫类的实例化。
 
 1.2 类模板
-	// 类的定义
-	class 类名(首写字母大写)
-	{
-	public:
-    	共有数据;
-	protected:
-    	保护的数据;
-	private:
-    	私有数据;
-	};
+	类的定义
+		class 类名(首写字母大写)
+		{
+		public:
+    			共有数据;
+		protected:
+    			保护的数据;
+		private:
+    			私有数据;
+		};
 	C++通过 public、protected、private 三个关键字来控制成员变量和成员函数的访问权限，它们分别表示公有的、受保护的、私有的，被称为成员访问限定符。所谓访问权限，就是你能不能使用该类中的成员。
 	创建对象有两种方法，一种是从栈中实例化对象，一种是从堆中实例化对象。
 	例1：从栈中实例化对象和从堆中实例化对象
-	#include <iostream>
-	using namespace std;
-	class Dog
-	{
-    	// 不写关键字的时候，就是pricate属性的
-	public:
-    	string name;
-    	int age;
-	};
+		#include <iostream>
+		using namespace std;
+		class Dog
+		{
+    		// 不写关键字的时候，就是pricate属性的
+		public:
+    			string name;
+    			int age;
+		};
 
-	int main()
-	{
-    	// 从栈中实例化对象
-    	Dog dog1;
-    	dog1.name = "旺财";
-    	cout << dog1.name << endl;
+		int main()
+		{
+    			// 从栈中实例化对象
+    			Dog dog1;
+    			dog1.name = "旺财";
+    			cout << dog1.name << endl;
 
-    	// 从堆中实例化对象,要用Delete删除
-    	Dog *dog2 = new Dog;
-    	dog2->age = 3;
-    	cout << dog2->age << endl;
-    	delete dog2;
+    			// 从堆中实例化对象,要用Delete删除
+    			Dog *dog2 = new Dog;
+    			dog2->age = 3;
+    			cout << dog2->age << endl;
+    			delete dog2;
 
-    	cout << "Hello World!" << endl;
-    	return 0;
-	}
+    			cout << "Hello World!" << endl;
+    			return 0;
+		}
 	例2：类的成员 - 函数
-	#include <iostream>
-	using namespace std;
+		#include <iostream>
+		using namespace std;
 
-	class Dog
-	{
-    	// 不写关键字的时候，就是pricate属性的
-	public:
-    	string name;
-    	int age;
-    	void run()
-    	{
-        	cout<< "狗会跑！" <<endl;
-    	};
-	private:
-    	double weight;
-	};
+		class Dog
+		{
+    		// 不写关键字的时候，就是pricate属性的
+		public:
+    			string name;
+    			int age;
+    		void run()
+    		{
+        		cout<< "狗会跑！" <<endl;
+    		};
+		private:
+    			double weight;
+		};
 
-	int main()
-	{
-    	// 从栈中实例化对象
-    	Dog dog1;
-    	dog1.name = "旺财";
-    	dog1.run();
-    	cout << dog1.name << endl;
+		int main()
+		{
+    			// 从栈中实例化对象
+    			Dog dog1;
+    			dog1.name = "旺财";
+    			dog1.run();
+    			cout << dog1.name << endl;
 
-    	cout << "Hello World!" << endl;
-    	return 0;
-	}
+    			cout << "Hello World!" << endl;
+    			return 0;
+		}
 
 1.3 构造函数与析构函数
 	定义了一个名称和类名相同，没有返回值的函数，这个函数称为构造函数。构造函数的特殊之处在于，它会在类实例化的时候被调用。
