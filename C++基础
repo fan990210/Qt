@@ -121,3 +121,41 @@
 		}
 	在类实例化对象的时候，如果没有定义构造函数，则编译器会合成一个默认的构造函数；当有了对象后，如果没有定义析构函数，则编译器会合成一个默认的析构函数。
 
+1.4 类的继承
+	基类和派生类：创建新类时，并不需要创建全新的数据和成员函数，我们可以指明这个新类继承现有类的成员。此时，现有的类称为“基类”，继承实现的新类称为“派生类”。
+	例：基类和派生类
+		#include <iostream>
+		using namespace std;
+
+		// 基类，也叫父类
+		class Animal
+		{
+		public:
+    			string name;
+   			double age;
+    			void run()
+    			{
+        			cout << "狗的年龄：" << age << endl;
+    			}
+		};
+
+		// 派生类，也叫子类，Dog类继承于Animal类
+		class Dog : public Animal
+		{};
+
+		int main()
+		{
+    			Dog dog1;
+    			dog1.age = 20.1;
+    			dog1.run();
+
+    			return 0;
+		}
+	1.公有继承时基类中各成员属性保持不变，基类中private成员被隐藏。派生类的成员只能访问基类中的public/protected成员，而不能访问private成员；派生类的对象只能访问基类中的public成员。
+	2.保护继承时基类中各成员属性均变为protected，并且基类中private成员被隐藏。派生类的成员只能访问基类中的public/protected成员，而不能访问private成员；派生类的对象不能访问基类中的任何的成员。
+	3.私有继承时基类中各成员属性均变为private，并且基类中private成员被隐藏。派生类的成员也只能访问基类中的public/protected成员，而不能访问private成员；派生类的对象不能访问基类中的任何的成员。 
+
+
+	
+
+
