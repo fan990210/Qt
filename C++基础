@@ -74,50 +74,50 @@
 
 1.3 构造函数与析构函数
 	定义了一个名称和类名相同，没有返回值的函数，这个函数称为构造函数。构造函数的特殊之处在于，它会在类实例化的时候被调用。
-	#include <iostream>
-	class Dog
-	{
-	public:
-    	Dog();
-	};
+		#include <iostream>
+		class Dog
+		{
+		public:
+    			Dog();
+		};
 
-	对象实例化的时候，会调用构造函数，而对象销毁的时候，就会调用析构函数。
-	#include <iostream>
-	class Dog
-	{
-	public:
-    	~Dog();
-	};
+		对象实例化的时候，会调用构造函数，而对象销毁的时候，就会调用析构函数。
+		#include <iostream>
+		class Dog
+		{
+		public:
+    			~Dog();
+		};
 
 	例：构造函数与析构函数
-	#include <iostream>
-	using namespace std;
-	class Dog
-	{
-	public:
-    	// 构造函数
-    	Dog()
-    	{
-        	cout << "构造函数执行了！" << endl;
-    	}
-    	// 析构函数
-    	~Dog();
-	};
-	Dog::~Dog()   // :: 表示作用域运算符
-	{
-    	cout << "析构函数执行了！" << endl;
-	}
+		#include <iostream>
+		using namespace std;
+		class Dog
+		{
+		public:
+    			// 构造函数
+    			Dog()
+    			{
+        			cout << "构造函数执行了！" << endl;
+    			}
+    			// 析构函数
+    			~Dog();
+		};
+		Dog::~Dog()   // :: 表示作用域运算符
+		{
+    			cout << "析构函数执行了！" << endl;
+		}
 
-	int main()
-	{
-    	// 从栈中实例化对象
-    	Dog dog1;
+		int main()
+		{
+    			// 从栈中实例化对象
+    			Dog dog1;
 
-    	// 从堆中实例化对象，需要用delete来删除
-    	Dog *dog2 = new Dog;
-    	delete dog2;
+    			// 从堆中实例化对象，需要用delete来删除
+    			Dog *dog2 = new Dog;
+    			delete dog2;
 
-    	return 0;
-	}
+    			return 0;
+		}
 	在类实例化对象的时候，如果没有定义构造函数，则编译器会合成一个默认的构造函数；当有了对象后，如果没有定义析构函数，则编译器会合成一个默认的析构函数。
 
