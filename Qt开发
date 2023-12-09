@@ -1,0 +1,10 @@
+1 创建Qt工程文件
+    （1）新建项目
+    （2）选择项目模板：选择Application(Qt) - Qt Widgets Application
+    （3）构建系统(Build system)：选择qmake
+    （4）基类(Base class)：QMainWindow：包括菜单栏和状态栏
+                          QWidget：仅有一个空白窗口
+                          QDialog：包含几个按键
+
+    （5）基类(Base class)：一般选择QMainWindow
+    （6）完成Qt工程的创建
