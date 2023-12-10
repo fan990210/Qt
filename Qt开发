@@ -8,3 +8,9 @@
 
     （5）基类(Base class)：一般选择QMainWindow
     （6）完成Qt工程的创建
+2 Qt项目文件
+    （1）Headers：头文件 - mainwindow.h
+    （2）Sources：源文件 - 包括main.cpp和mainwindow.cpp
+    （3）Forms：窗体文件 - mainwindow.ui
+2.1 .pro工程文件
+    在 .pro 工程文件中，QT += core gui 其中，QT 是一个宏，core 和 gui 是 Qt 中的模块，在 mainwindow.h 头文件中引用一些头文件时，需要在 .pro 添加相应的模块
