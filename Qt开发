@@ -12,5 +12,61 @@
     （1）Headers：头文件 - mainwindow.h
     （2）Sources：源文件 - 包括main.cpp和mainwindow.cpp
     （3）Forms：窗体文件 - mainwindow.ui
-2.1 .pro工程文件
     在 .pro 工程文件中，QT += core gui 其中，QT 是一个宏，core 和 gui 是 Qt 中的模块，在 mainwindow.h 头文件中引用一些头文件时，需要在 .pro 添加相应的模块
+
+3 Qt程序启动流程
+    （1）main.cpp 分析
+        #include "mainwindow.h"
+        #include <QApplication>
+        // 程序入口
+        int main(int argc, char *argv[])
+        {
+            // argc是命令行参数个数，argv是命令行参数
+            // QApplication a(argc, argv),管理 Qt 程序的运行，和设置 Qt 应用程序，针对 QWidget 应用程序
+            // QGuiApplication a(argc, argv),管理 Qt 程序的运行，和设置 Qt 应用程序，针对非 QWidget 应用程序，比如 QQuick
+            // QCoreApplication a(argc, argv),管理 Qt 程序的运行，和设置 Qt 应用程序，针对无界面的应用程序
+            QApplication a(argc, argv);
+            // MainWindow 是我们自己定义的类，w 是创建的对象
+            MainWindow w;
+            // w 对象调用了 show() 方法
+            w.show();
+            // 事件循环，QEventLoop::exec()，等待鼠标或者键盘等其他输入
+            return a.exec();
+        }
+    （2）如何添加变量
+        首先，在 mainwindow.h 的子类中定义变量，如下所示，定义变量i
+            #ifndef MAINWINDOW_H
+            #define MAINWINDOW_H
+            #include <QMainWindow>
+            QT_BEGIN_NAMESPACE
+            namespace Ui { class MainWindow; }
+            QT_END_NAMESPACE
+            class MainWindow : public QMainWindow
+            {
+                // 宏定义，Qt 信号槽需要它
+                Q_OBJECT
+            public:
+                MainWindow(QWidget *parent = nullptr);
+                ~MainWindow();
+                int i;
+            private:
+                Ui::MainWindow *ui;
+            };
+            #endif // MAINWINDOW_H
+        其次，在 mainwindow.cpp 中调用，如下所示
+            #include "mainwindow.h"
+            #include "ui_mainwindow.h"
+            #include <QDebug>
+            MainWindow::MainWindow(QWidget *parent)
+                : QMainWindow(parent)
+                , i(4)                     //i = 4;
+                , ui(new Ui::MainWindow)   // ui = new Ui::Mywindow
+            {
+                ui->setupUi(this);
+                qDebug() << "构造函数执行了！" << endl;
+            }
+            MainWindow::~MainWindow()
+            {
+                qDebug() << "析构函数执行了！" << endl;
+                delete ui;
+            }
