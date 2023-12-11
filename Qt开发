@@ -70,3 +70,15 @@
                 qDebug() << "析构函数执行了！" << endl;
                 delete ui;
             }
+
+4 Qt 常用的快捷键
+    （1）新建项目：Ctrl + n
+    （2）运行项目：Ctrl + r
+    （3）构建项目：Ctrl + b
+    （4）改变编辑器界面字体显示比例大小：Ctrl + 鼠标滚轮
+    （5）代码对齐：Ctrl + a; Ctrl + i
+    （6）跳转到上一行：Ctrl + shift + enter
+    （7）跳转到下一行：Ctrl + enter
+    （8）向上移动行：Ctrl + shift + 上箭头
+    （9）向上移动行：Ctrl + shift + 下箭头
+    
