@@ -1,4 +1,4 @@
-1 创建Qt工程文件
+1 创建 Qt 工程文件
     （1）新建项目
     （2）选择项目模板：选择Application(Qt) - Qt Widgets Application
     （3）构建系统(Build system)：选择qmake
@@ -8,13 +8,13 @@
 
     （5）基类(Base class)：一般选择QMainWindow
     （6）完成Qt工程的创建
-2 Qt项目文件
+2 Qt 项目文件
     （1）Headers：头文件 - mainwindow.h
     （2）Sources：源文件 - 包括main.cpp和mainwindow.cpp
     （3）Forms：窗体文件 - mainwindow.ui
     在 .pro 工程文件中，QT += core gui 其中，QT 是一个宏，core 和 gui 是 Qt 中的模块，在 mainwindow.h 头文件中引用一些头文件时，需要在 .pro 添加相应的模块
 
-3 Qt程序启动流程
+3 Qt 程序启动流程
     （1）main.cpp 分析
         #include "mainwindow.h"
         #include <QApplication>
@@ -82,5 +82,12 @@
     （8）向上移动行：Ctrl + shift + 上箭头
     （9）向上移动行：Ctrl + shift + 下箭头
     （10）头文件和源文件切换：F4
+
+5 Qt 编程规范
+    （1）Qt 中的文件名都是小写字母
+    （2）类的命名首写字母大写，单词和单词之间的首写字母也是大写的
+    （3）除了构造函数于析构函数，成员函数的首写字母都是小写的，单词和单词之间首写字母都是大写的
+    （4）变量的首写字母都是小写的，单词和单词之间首写字母都是大写的
+    （5）条件判断语句的左大括号往往不会另起一行
     
     
