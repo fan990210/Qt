@@ -38,4 +38,11 @@
         {
             delete ui;
         }
-        
+
+3 自定义信号槽
+    （1）新建 C++ 文件：选择 C++ Class ， Class name 中输入文件名称，Base class 中选择 QObject ，完成即可
+    （2）signals: 为 Qt 信号的关键字，自定义的信号写在关键字下面，只需要声明，不需要定义
+    （3）槽写在 “public slots:” 下边，需要声明，也需要定义
+    （4）emit 为发射信号的关键字，Qt 独有。 例：emit school->sendMessages();
+
+    
