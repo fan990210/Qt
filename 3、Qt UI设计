@@ -6,5 +6,36 @@
         修改属性 geometry 的 x 和 y 修改显示框的位置
     （3）Push Button 按钮控件
         
+2 Qt 信号槽介绍
+    （1）信号与槽关联是用 QObject::connect() 函数实现的，基本格式为：
+            QObject::connect(sender, SIGNAL(signal()), receiver, SLOT(slot()));
+        connect() 是 QObject 类的一个静态函数，而 QObject 是所有 Qt 类的基类，在实际调用时可以忽略前面的限定符，所以可以直接写为：
+            connect(sender, SIGNAL(signal()), receiver, SLOT(slot()));
+        其中，sender 是发射对象的名称，signal() 是信号名称。信号可以看作是特殊的函数，需要带括号，有参数时还需要指明参数。receiver 是接收信号的对象名称，slot() 是槽函数的名称，需要带括号，有参数时还需要指明参数。
+    （2）断开信号槽连接的方法：
+        方法一： 断开一切与 myObject 连接的信号与槽。
+                    disconnect(myObject, 0, 0, 0);
+                相当于非静止重载函数：myObject->disconnect();
+        方法二： 断开所有连接到特定信号的东西：
+                    disconnect(myObject, SIGNAL(mySignal()), 0, 0);
+                相当于非静止重载函数：myObject->disconnect(SIGNAL(mySignal()));
+        方法三： 与指定接收者断开连接：
+                    disconnect(myObject, 0, myReceiver, 0);
+                相当于非静态重载函数：myObject->disconnect(myReceiver);
+    例：使用 pushButton 控件控制主窗口关闭，在 mainwindow.cpp 中使用 connect 函数实现
+        #include "mainwindow.h"
+        #include "ui_mainwindow.h"
+        #include "QDebug"
 
+        MainWindow::MainWindow(QWidget *parent)
+            : QMainWindow(parent)
+            , ui(new Ui::MainWindow)
+        {
+            ui->setupUi(this);
+            connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(close()));
+        }
+        MainWindow::~MainWindow()
+        {
+            delete ui;
+        }
         
