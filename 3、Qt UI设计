@@ -46,4 +46,13 @@
     （4）emit 为发射信号的关键字，Qt 独有。 例：emit school->sendMessages();
     （5）一个信号可以连接多个槽，一个信号也可以连接另一个信号
 
+4 Qt 的 Object Tree
+    （1）为什么设置父对象？：因为窗口需要互相联系，比如 A 需要显示在 B 上面，A需要指定B为父对象
+        设置父对象的两种方法:
+        方法一：通过构造函数传参
+            例1：pushButton = new QPushButton(this);
+        方法二：通过 setParent() 方法
+            例2：pushButton = new QPushButton;
+                pushButton->setParent(this) ;
+
     
