@@ -56,4 +56,14 @@
                 pushButton->setParent(this) ;
     （2）Qt 的对象树机制目的是为了方便内存管理
     
-    
+5 添加资源文件
+    （1）添加资源文件
+        Qt - Qt Resource File
+        Add Prefix - 修改前缀 - Add Files - 选择文件
+
+6 Qt 样式表的使用，在 Lable 中添加资源文件
+    （1）搜索 stylesheet 查看样式表的使用方法
+    （2）右键 Lable 控件 - 改变样式表：
+            QLabel{
+                 border-image:url(:/images/2020pingan.png);
+            }
