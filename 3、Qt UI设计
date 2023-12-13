@@ -54,5 +54,6 @@
         方法二：通过 setParent() 方法
             例2：pushButton = new QPushButton;
                 pushButton->setParent(this) ;
-
+    （2）Qt 的对象树机制目的是为了方便内存管理
+    
     
