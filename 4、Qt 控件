@@ -9,5 +9,14 @@
         （2）pressed() 按下信号
         （3）released() 松开信号
         （4）toggled() 开关信号
+            toggled()信号使用时要在 Widget 中添加语句 ui->pushButton->setCheckable(true);
+            例：
+                Widget::Widget(QWidget *parent)
+                    : QWidget(parent)
+                    , ui(new Ui::Widget)
+                {
+                    ui->setupUi(this);
+                    ui->pushButton->setCheckable(true);
+                }
     
 
