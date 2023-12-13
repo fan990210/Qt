@@ -61,9 +61,14 @@
         Qt - Qt Resource File
         Add Prefix - 修改前缀 - Add Files - 选择文件
 
-6 Qt 样式表的使用，在 Lable 中添加资源文件
+6 Qt 样式表的使用，在 Label 中添加资源文件
     （1）搜索 stylesheet 查看样式表的使用方法
-    （2）右键 Lable 控件 - 改变样式表：
+    （2）右键 Label 控件 - 改变样式表：
             QLabel{
                  border-image:url(:/images/2020pingan.png);
+            }
+    （3）改变 Label 字体颜色和大小
+            QLabel{
+	            color:red;
+	            font-size:30px;
             }
