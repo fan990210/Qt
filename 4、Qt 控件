@@ -1,1 +1,8 @@
+1 QWidget
+    （1）QWidget 类是所有用户界面对象的基类
+    （2）常用于做顶层小部件或者子小部件
+    （3）在样式表修改 QWidget 的颜色
+            QWidget{background-color:rgb(220,220,220);}
+2 QPushButton
+    
 
