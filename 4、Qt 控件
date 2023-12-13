@@ -4,5 +4,10 @@
     （3）在样式表修改 QWidget 的颜色
             QWidget{background-color:rgb(220,220,220);}
 2 QPushButton
+    常用信号
+        （1）clicked() 点击信号
+        （2）pressed() 按下信号
+        （3）released() 松开信号
+        （4）toggled() 开关信号
     
 
