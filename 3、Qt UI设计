@@ -72,3 +72,27 @@
 	            color:red;
 	            font-size:30px;
             }
+	（4）改变窗口颜色
+			QWidget{
+				background-color:white;
+			}
+7 qss 文件的使用
+	（1）创建资源文件
+	（2）在资源文件中添加 qss 文件
+	（3）编辑 qss 文件：例：QLabel { background-color:red }
+	（4）在 main.cpp 中编辑：
+		添加头文件：
+			#include <QFile>
+		在 main 函数中添加：
+    		QFile file(":/style.qss");
+    		/* 判断文件是否存在 */
+    		if (file.exists() ) {
+        		/* 以只读的方式打开 */
+        		file.open(QFile::ReadOnly);
+        		/* 以字符串的方式保存读出的结果 */
+        		QString styleSheet = QLatin1String(file.readAll());
+        		/* 设置全局样式 */
+        		qApp->setStyleSheet(styleSheet);
+        		/* 关闭文件 */
+        		file.close();
+    		}
