@@ -96,3 +96,8 @@
         		/* 关闭文件 */
         		file.close();
     		}
+	（5）按钮切换时样式表设计
+		初始状态：QPushButton#pushButton_1 { border-image: url(:/images/btn_play_1.png)}
+		鼠标悬停时：QPushButton#pushButton_1:hover { border-image: url(:/images/btn_play_2.png)}
+		按键按下时：QPushButton#pushButton_1:checked { border-image: url(:/images/btn_pause_1.png)}
+		鼠标悬停时：QPushButton#pushButton_1:checked:hover { border-image: url(:/images/btn_pause_2.png)}
