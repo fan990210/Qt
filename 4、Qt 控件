@@ -23,7 +23,8 @@
     （1）需要讲按钮分为多组，即选中其中一部分，右键 - 指定到按键组 - 新建按键组
     （2）若需要选中多个单选按钮，则在 Filter 中选中对应的按键组，在属性中，取消勾选 exclusive
     （3）更改单选按钮的形状：
-        默认：QRadioButton::indicator:unchecked {image: url(:/icons/radioButton_unchecked.png)}
-        按下：QRadioButton::indicator:checked {image: url(:/icons/radioButton_checked.png)}
+        默认：QRadioButton::indicator:unchecked {image: url(路径)}
+        按下：QRadioButton::indicator:checked {image: url(路径)}
     （4）更改字体大小和颜色：QRadioButton {font-size:30px; color:#99404040}
     （5）取消左侧小圆圈（将圆圈大小设置为0）：QRadioButton::indicator {width:0px; height:0px}
+    （6）更改字体背景颜色：QRadioButton {background-color:#aadddddd}
