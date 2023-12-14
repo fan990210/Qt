@@ -19,4 +19,4 @@
                     ui->pushButton->setCheckable(true);
                 }
     
-
+3 QRadioButton 单选按钮
